@@ -1,11 +1,11 @@
 
-Direct and Indirect Contributors:
+Direct and Indirect Contributors (Discord Names):
 * Raph Schru
 * Nathan Davis
+* DNatt
+* Redhawk
 * Peter
 * Tim Elsey
-* Redhawk
-* DNatt
 
 All three: Flat Sequence Structure from palettes, fss from Quick Drop, and Quick Drop Sequence do not pass a selected wire through the structure. This is probably intended since the data on the wire isn't being manipulated in the structure, hence shouldn't pass through the structure.
 Nonetheless, there is value in having the wire through the structure being placed if the wire is selected.
@@ -52,20 +52,48 @@ Note the code here:
 
 Use the `TopLevelDiagram:EncloseSelection2`, noting:
 1. Must wire a reference to an actual structure to specify the structure type, not just a `Class Specifier Constant`.
-2. Only accepts classes that inherit from `Structure`. For a `Flat Sequence Structure` (since `Flat Sequence Structure` does not inherit from `Structure`), a workaround can be used to type cast to a `Sequence`. Otherwise, one could explicitly wrap with a `Stacked Sequence`, then convert to a `Flat Sequence Structure` via the convert method below.
+2. Only accepts classes that inherit from `Structure`. For a `Flat Sequence Structure` (since `Flat Sequence Structure` does not inherit from `Structure`), a workaround can be used to type cast to a `Structure` below. Otherwise, one could explicitly wrap with a `Stacked Sequence`, then convert to a `Flat Sequence Structure` via the convert method below.
+
+![Type_Cast_Structure](Images/Type_Cast_Structure.png)
+*Type Cast Structure. EncloseSelection2 allows passing of a Flat Sequence directly, only requiring a `Structure` type cast.*
 
 ![Convert_To_FlatSeq](Images/Convert_To_FlatSeq.png)
 *Convert To FlatSeq.*
 
+`Structure` properties `Position` and `Frame Size` allow repositioning/resizing. The downside is you can only resize from the bottom and right sides.
 
+> Context help of private property "Frame Rectangle" claims it can resize from all sides, unfortunately it always returns error 1058 (property not found)...
 
-**Created branch**
+Other class hierarchies such as the XML Parser classes require a `Coerce To Type` because `To More Specific` / `To More Generic` are not supported for this class hierarchy. Refer to this presentation [Everything You Need to Know about VI Scripting in LabVIEW](https://forums.ni.com/t5/Community-Documents/Everything-You-Need-to-Know-about-VI-Scripting-in-LabVIEW/ta-p/4428599), in particular:
+* Flat Sequences: Slides 44-45
+* Type Casting refnums: Slide 48
 
+There are other cases where a Type Cast is needed, such as when using VI method `Create from Reference` to create a constant. Both input `Source Object Ref` and output `New Object Ref` are of type `Control`, but work with type cast'ed constants too.
+Ideally, the method's terminal's type should be the common parent class (`GObject`) to avoid the need for such hacks. Image illustration below.
 
+![Type_Cast_Misc](Images/Type_Cast_Misc.png)
+*Type Cast Class Name at outputs preserved.*
 
+Note that the Type Casting isn't foolproof such as casting a `ComboBoxConstant` to `ComboBox` to try to set a property on the constant. LabVIEW subsequently crashed.
 
+Further mention of another type cast usage example: `LabVIEWClassConstant` -> `LabVIEWClassControl` to access `LabVIEW Class Name` / `Qualified Name` properties found at
+[LabVIEW: Scripting: Obtaining name of LVClass wrapped in DVR](https://forums.ni.com/t5/LabVIEW/Scripting-Obtaining-name-of-LVClass-wrapped-in-DVR/m-p/4473917).
+
+The placements of `Always Copy.vi` are pixel perfect with the selected elements, ensuring the most compact structure is created.
+
+This is a Quick Drop shortcut.
+1. Select what will be wrapped in structure,
+2. Press `ctrl+space`,
+3. Type the structure name (fss, ws, fr, etc),
+4. press `ctrl+S` ("S" for Structure).
+This wires the structure compactly around what has been selected.
+
+This plugin can be downloaded on VIPM:
+[VIPM: Enclose In Structure](https://www.vipm.io/)
+**TODO: Link above has not been created**
 
 Discussions here:
+- [Quick Drop Enthusiasts](https://forums.ni.com/t5/Quick-Drop-Enthusiasts/bd-p/grp-1251)
 - [Just Passing Through](https://dqmh.org/just-passing-through/)
 - [Your LabVIEW Code Is a Work of Art... But I Can't Read It by Darren Nattinger. GDevCon N.A. 2024](https://www.youtube.com/watch?v=AHOZ7fiuWCA)
 - [An End to Brainless Programming - Darren Nattinger](https://www.youtube.com/watch?v=pS1UBZzKl9k)
@@ -82,3 +110,9 @@ Discussions here:
 
 This tool places a structure around selected *elements* and ensures all wires selected are wired through the structure as well. Different structures have different rules (while loop are shift registers, case structures are pass through **(what's the name of this?)**, etc.)
 
+
+
+
+
+
+Since we know the reference of the wire highlighted, then we can get it's position.
