@@ -1,0 +1,29 @@
+# Libraries
+*.lvlibp
+*.llb
+*.vip
+*.vipc
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+
+# Metadata
+*.aliases
+*.lvlps
+.cache/
+
+# Obsidian files to ignore
+.obsidian/
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+#Conversations
+prompt.md
