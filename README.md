@@ -18,6 +18,8 @@ Do not pass unmodified values through a VI. It degrades readability.
 On goal here is to eliminate pass through values in VIs by easily allowing developers to wrap a Flat Sequence Structure around the VI (that otherwise would pass the immutable error through it's terminal for serialization) and error wire. This operation of putting a structure around a selected wire does not pass the wire through the structure, rather only placing the structure over the wire.
 Philosophically, passing real data to purposely enforce execution order is an anti pattern. The language shouldn’t allow non modified pass through values in VIs (unless they are dynamic dispatch terminals).
 
+If the error wire is being passed through the VI only for serialization, then the VI in the calling code should have a flat sequence structure around the VI and error for serialization.
+
 ![FSS_Error](img/FSS_Error.png)
 **TODO: Insert updated picture.**
 *Preferred Flat Sequence Structure usage for serializing a VI with the error wire (left), opposed to passing the error wire through the VI (where the VI does not mutate the error) (right).*
@@ -30,6 +32,9 @@ Goal: RC that takes wire(s) and/or other VI(s) and passes the wire through the s
 Process:
 Insert a `Always Copy.vi`, insert the `Structure` around it, then delete `Always Copy.vi`.
 
+## Packaging
+
+https://forums.ni.com/t5/Quick-Drop-Enthusiasts/How-to-configure-Package-Build-Spec-for-Quick-Drops/td-p/3806926
 ## SubVI Idea
 
 1. Create SubVI from selection (internals shown below)
@@ -121,6 +126,14 @@ Bounds of where `Always Copy.vi` are placed (respective corner of the `Always Co
 
 Two Quick Drop shortcuts ("s" for `Structure`): `ctrl+s` and `ctrl+shift+s`.
 
+QD VI Description:
+```
+This is merely a Quick Drop shortcut that wires across wires for a flat sequence structure
+The flat sequence structure is minimally compact, independent of what is drawn.
+This will surely be replaced once NI enables pass through values to propagate through structures, by default.
+```
+
+
 ### Enclose In Structure `ctrl+s`
 
 1. Select object(s),
@@ -129,6 +142,8 @@ Two Quick Drop shortcuts ("s" for `Structure`): `ctrl+s` and `ctrl+shift+s`.
 4. press `ctrl+s`.
 This wires the structure compactly around what has been selected.
 At the end, selects the structure. This allows one to `ctrl+s` further structures around the selected structure. This enables one to create nested structures immediately.
+
+`ctrl+s` without structure abbreviation defaults as the `Flat Sequence Structure`.
 
 ### Replace With Structure `ctrl+shift+s`
 
