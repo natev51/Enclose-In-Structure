@@ -126,7 +126,7 @@ Two Quick Drop shortcuts ("s" for `Structure`): `ctrl+s` and `ctrl+shift+s`.
 3. Type the structure abbreviation (fss, ws, fr, etc),
 4. press `ctrl+s`.
 This wires the structure compactly around what has been selected.
-**At the end, selects the internals of the structure, excluding the structure and it's tunnels. This allows one to `ctrl+r` to remove selected objects.**
+At the end, selects the structure. This allows one to `ctrl+s` further structures around the selected structure. This enables one to create nested structures immediately.
 
 ### Replace With Structure `ctrl+shift+s`
 
@@ -139,7 +139,10 @@ Natively LabVIEW does not allow for all structures to replace each other. There 
 This replaces the selected structure with the structure corresponding to the structure abbreviation.
 
 Can only replace structure(s).
-For one who wants to replace a non structure selection with a structure, can wrap selected elements with a structure by using `ctrl+s`, then `ctrl+r` (since objects inside are selected after `ctrl+s`).
+For one who wants to replace a non structure selection with a structure, can wrap selected elements with a structure by using `ctrl+s`, then `ctrl+r` the internal objects of the structure.
+Idea :bulb:: Right click menu for selecting everything within a structure could be beneficial for the above?
+
+At the end, selects the structure, just as `ctrl+s` does.
 
 ---
 
@@ -198,3 +201,6 @@ Future releases could leverage a local .ini file, customizable by the user, only
 
 ![Structure_Type_Cast_Result](Images/Structure_Type_Cast_Result.png)
 *Structure Type Cast Result.*
+
+
+
