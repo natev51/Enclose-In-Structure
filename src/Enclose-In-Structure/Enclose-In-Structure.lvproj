@@ -68,18 +68,29 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Test" Type="Folder">
-			<Item Name="Dumb VIs" Type="Folder">
-				<Item Name="No Inputs.vi" Type="VI" URL="../No Inputs.vi"/>
-				<Item Name="Top IO.vi" Type="VI" URL="../Top IO.vi"/>
+		<Item Name="Sandbox" Type="Folder">
+			<Item Name="NathanDavis" Type="Folder">
+				<Item Name="Test" Type="Folder">
+					<Item Name="Dumb VIs" Type="Folder">
+						<Item Name="No Inputs.vi" Type="VI" URL="../Sandbox/NathanDavis/No Inputs.vi"/>
+						<Item Name="Top IO.vi" Type="VI" URL="../Sandbox/NathanDavis/Top IO.vi"/>
+					</Item>
+					<Item Name="Tester 1.vi" Type="VI" URL="../Sandbox/NathanDavis/Tester 1.vi"/>
+				</Item>
+				<Item Name="Script" Type="Folder">
+					<Item Name="Helper" Type="Folder">
+						<Item Name="Drop Bound Always Copy.vi" Type="VI" URL="../Sandbox/NathanDavis/Drop Bound Always Copy.vi"/>
+					</Item>
+					<Item Name="Script.vi" Type="VI" URL="../Sandbox/NathanDavis/Script.vi"/>
+				</Item>
 			</Item>
-			<Item Name="Tester 1.vi" Type="VI" URL="../Tester 1.vi"/>
+			<Item Name="RaphSchru" Type="Folder">
+				<Item Name="QD Template.vi" Type="VI" URL="../Sandbox/RaphSchru/QD Template.vi"/>
+				<Item Name="Dummy Target VI.vi" Type="VI" URL="../Sandbox/RaphSchru/Dummy Target VI.vi"/>
+			</Item>
 		</Item>
-		<Item Name="Script" Type="Folder">
-			<Item Name="Helper" Type="Folder">
-				<Item Name="Drop Bound Always Copy.vi" Type="VI" URL="../Drop Bound Always Copy.vi"/>
-			</Item>
-			<Item Name="Script.vi" Type="VI" URL="../Script.vi"/>
+		<Item Name="Quick Drop" Type="Folder" URL="../Quick Drop">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
