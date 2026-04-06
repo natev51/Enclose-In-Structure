@@ -69,25 +69,11 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Sandbox" Type="Folder">
-			<Item Name="NathanDavis" Type="Folder">
-				<Item Name="Test" Type="Folder">
-					<Item Name="Dumb VIs" Type="Folder">
-						<Item Name="No Inputs.vi" Type="VI" URL="../Sandbox/NathanDavis/No Inputs.vi"/>
-						<Item Name="Top IO.vi" Type="VI" URL="../Sandbox/NathanDavis/Top IO.vi"/>
-					</Item>
-					<Item Name="Tester 1.vi" Type="VI" URL="../Sandbox/NathanDavis/Tester 1.vi"/>
-				</Item>
-				<Item Name="Script" Type="Folder">
-					<Item Name="Helper" Type="Folder">
-						<Item Name="Drop Bound Always Copy.vi" Type="VI" URL="../Sandbox/NathanDavis/Drop Bound Always Copy.vi"/>
-					</Item>
-					<Item Name="Script.vi" Type="VI" URL="../Sandbox/NathanDavis/Script.vi"/>
-				</Item>
-			</Item>
-			<Item Name="RaphSchru" Type="Folder">
-				<Item Name="QD Template.vi" Type="VI" URL="../Sandbox/RaphSchru/QD Template.vi"/>
-				<Item Name="Dummy Target VI.vi" Type="VI" URL="../Sandbox/RaphSchru/Dummy Target VI.vi"/>
-			</Item>
+			<Item Name="QD Template.vi" Type="VI" URL="../Sandbox/QD Template.vi"/>
+			<Item Name="Dummy VI 1.vi" Type="VI" URL="../Sandbox/Dummy VI 1.vi"/>
+			<Item Name="Dummy VI 2.vi" Type="VI" URL="../Sandbox/Dummy VI 2.vi"/>
+			<Item Name="Dummy VI 3.vi" Type="VI" URL="../Sandbox/Dummy VI 3.vi"/>
+			<Item Name="Dummy VI 4.vi" Type="VI" URL="../Sandbox/Dummy VI 4.vi"/>
 		</Item>
 		<Item Name="Quick Drop" Type="Folder" URL="../Quick Drop">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
