@@ -73,7 +73,7 @@
 			<Item Name="Dummy VI 1.vi" Type="VI" URL="../Sandbox/Dummy VI 1.vi"/>
 			<Item Name="Dummy VI 2.vi" Type="VI" URL="../Sandbox/Dummy VI 2.vi"/>
 			<Item Name="Dummy VI 3.vi" Type="VI" URL="../Sandbox/Dummy VI 3.vi"/>
-			<Item Name="Dummy VI 4.vi" Type="VI" URL="../Sandbox/NathanDavis/Dummy VI 4.vi"/>
+			<Item Name="Dummy VI 4.vi" Type="VI" URL="../Sandbox/Dummy VI 4.vi"/>
 		</Item>
 		<Item Name="Quick Drop" Type="Folder" URL="../Quick Drop">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
