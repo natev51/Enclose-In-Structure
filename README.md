@@ -1,5 +1,4 @@
-# Enclose-In-Structure
-
+# Enclose-in-Structure
 
 Direct and Indirect Contributors (Discord Names):
 * Raph Schru
@@ -221,3 +220,12 @@ Future releases could leverage a local .ini file, customizable by the user, only
 
 
 
+Idea :bulb:: `ctrl+shift+s` acts as a replace AND cleanup the structure.
+For example, when there is a say `Case Structure` selected, `ctrl+space` and `ctrl+shift+s` (without anything in the box i.e. "") would detect the structure type, realize it doesn't need to replace it is "" in the combo box, and perform a cleanup to the diagram. This could occur by:
+1. Programmatically selecting the internals of the case structure
+	1. If it is a multiframe structure, as is here, iterate through each frame and find the bounds of the internally selected objects to determine the largest bounds for all frames , then make a new case structure within.
+2. If the structure can resize to the bounds specified, then just make it smaller in that capacity.
+   *Note the resizing trickery elsewhere in the doc.*
+
+
+Idea :bulb:: FSS madness: some kind of right click for the FSS, where, depending on where the right click occurs, takes the preexisting FSS and made a cascade FSS, effectively making another frame by separating the sides.
