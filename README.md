@@ -1,4 +1,4 @@
-# Enclose-In-Structure
+# Enclose-in-Structure
 
 A [Quick Drop](https://forums.ni.com/t5/Quick-Drop-Enthusiasts/bd-p/grp-1251) plugin for LabVIEW that encloses selected block diagram elements in a structure, automatically wiring pass-through values. Two shortcuts — `ctrl+s` to enclose, `ctrl+shift+s` to replace / cleanup — bound to **S** like **S**tructure. The tool creates a maximally compact structure around the selection, so developers can select liberally and let the tool handle cleanup.
 
@@ -248,3 +248,15 @@ A script to automate installation: detect the LabVIEW version, copy the VI and p
 - [LabVIEW Idea Exchange: Add structure on bare wires](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/Add-structure-on-bare-wires/idi-p/4467734)
 - [How to configure Package Build Spec for Quick Drops](https://forums.ni.com/t5/Quick-Drop-Enthusiasts/How-to-configure-Package-Build-Spec-for-Quick-Drops/td-p/3806926)
 - [Everything You Need to Know about VI Scripting in LabVIEW](https://forums.ni.com/t5/Community-Documents/Everything-You-Need-to-Know-about-VI-Scripting-in-LabVIEW/ta-p/4428599)
+
+## Find Place For These
+
+Idea :bulb:: `ctrl+shift+s` acts as a replace AND cleanup the structure.
+For example, when there is a say `Case Structure` selected, `ctrl+space` and `ctrl+shift+s` (without anything in the box i.e. "") would detect the structure type, realize it doesn't need to replace it is "" in the combo box, and perform a cleanup to the diagram. This could occur by:
+1. Programmatically selecting the internals of the case structure
+	1. If it is a multiframe structure, as is here, iterate through each frame and find the bounds of the internally selected objects to determine the largest bounds for all frames , then make a new case structure within.
+2. If the structure can resize to the bounds specified, then just make it smaller in that capacity.
+   *Note the resizing trickery elsewhere in the doc.*
+
+
+Idea :bulb:: FSS madness: some kind of right click for the FSS, where, depending on where the right click occurs, takes the preexisting FSS and made a cascade FSS, effectively making another frame by separating the sides.
