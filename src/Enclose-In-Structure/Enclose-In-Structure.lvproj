@@ -69,16 +69,18 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Sandbox" Type="Folder">
-			<Item Name="QD Template.vi" Type="VI" URL="../Sandbox/QD Template.vi"/>
 			<Item Name="Dummy VI 1.vi" Type="VI" URL="../Sandbox/Dummy VI 1.vi"/>
 			<Item Name="Dummy VI 2.vi" Type="VI" URL="../Sandbox/Dummy VI 2.vi"/>
 			<Item Name="Dummy VI 3.vi" Type="VI" URL="../Sandbox/Dummy VI 3.vi"/>
 			<Item Name="Dummy VI 4.vi" Type="VI" URL="../Sandbox/Dummy VI 4.vi"/>
+			<Item Name="QD Template.vi" Type="VI" URL="../Sandbox/QD Template.vi"/>
 		</Item>
-		<Item Name="Quick Drop" Type="Folder" URL="../Quick Drop">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Scripts" Type="Folder">
+			<Item Name="Scripts.lvlib" Type="Library" URL="../Scripts/Scripts.lvlib"/>
 		</Item>
-		<Item Name="Scripts.lvlib" Type="Library" URL="../Scripts/Scripts.lvlib"/>
+		<Item Name="Quick Drop" Type="Folder">
+			<Item Name="Enclose in Structure.lvlib" Type="Library" URL="../Quick Drop/_Enclose in Structure/Enclose in Structure.lvlib"/>
+		</Item>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
