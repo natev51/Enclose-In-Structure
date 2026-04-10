@@ -78,6 +78,7 @@
 		<Item Name="Quick Drop" Type="Folder" URL="../Quick Drop">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="Scripts.lvlib" Type="Library" URL="../Scripts/Scripts.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
