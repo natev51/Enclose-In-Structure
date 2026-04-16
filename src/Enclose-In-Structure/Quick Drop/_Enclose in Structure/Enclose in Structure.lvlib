@@ -10,6 +10,7 @@
 	<Item Name="Types" Type="Folder">
 		<Item Name="Structure Type.ctl" Type="VI" URL="../Structure Type.ctl"/>
 		<Item Name="Selection Map.ctl" Type="VI" URL="../Selection Map.ctl"/>
+		<Item Name="Scripting Session.ctl" Type="VI" URL="../Scripting Session.ctl"/>
 	</Item>
 	<Item Name="SubVIs" Type="Folder">
 		<Item Name="Core.vi" Type="VI" URL="../Core.vi"/>
@@ -17,12 +18,16 @@
 		<Item Name="Enclose Objects in Structure.vi" Type="VI" URL="../Enclose Objects in Structure.vi"/>
 		<Item Name="Get Dummy Structure Reference.vi" Type="VI" URL="../Get Dummy Structure Reference.vi"/>
 		<Item Name="Insert AC Nodes in Wires.vi" Type="VI" URL="../Insert AC Nodes in Wires.vi"/>
-		<Item Name="Look Up Structure.vi" Type="VI" URL="../Look Up Structure.vi"/>
 		<Item Name="Offset Structure.vi" Type="VI" URL="../Offset Structure.vi"/>
 		<Item Name="Parse Structure Type.vi" Type="VI" URL="../Parse Structure Type.vi"/>
 		<Item Name="Remove AC Nodes in Wires.vi" Type="VI" URL="../Remove AC Nodes in Wires.vi"/>
 		<Item Name="Elevate Selection to Lowest Common Diagram.vi" Type="VI" URL="../Elevate Selection to Lowest Common Diagram.vi"/>
 		<Item Name="Register Object in Selection.vi" Type="VI" URL="../Register Object in Selection.vi"/>
+		<Item Name="Register Diagram Hierarchy in Selection.vi" Type="VI" URL="../Register Diagram Hierarchy in Selection.vi"/>
+		<Item Name="Get Map Keys.vim" Type="VI" URL="../Get Map Keys.vim"/>
+		<Item Name="Get Wire Selected Parts Bounds.vi" Type="VI" URL="../Get Wire Selected Parts Bounds.vi"/>
+		<Item Name="Begin Scripting Session.vi" Type="VI" URL="../Begin Scripting Session.vi"/>
+		<Item Name="End Scripting Session.vi" Type="VI" URL="../End Scripting Session.vi"/>
 	</Item>
 	<Item Name="Enclose in Structure.vi" Type="VI" URL="../../Enclose in Structure.vi"/>
 </Library>
